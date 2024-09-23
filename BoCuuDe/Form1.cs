@@ -17,6 +17,7 @@ namespace BoCuuDe
         Bo bo;
         Cuu cuu;
         De de;
+
         string connectionString = @"Data Source=LAPTOP-EMD0MQBF\SQLEXPRESS;Initial Catalog=BoCuuDe;User ID=sa;Password=huy582004";
 
 

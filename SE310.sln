@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE310", "SE310\SE310.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoCuuDe", "BoCuuDe\BoCuuDe.csproj", "{ACB3EABA-D830-463B-84DC-6D8BC166EB36}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThucHanhWebMVC", "ThucHanhWebMVC\ThucHanhWebMVC.csproj", "{B4484A3F-23E2-4D2B-AD53-BFF19790D5A6}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{B69E02AF-B7BB-4659-9E17-D65587B820EC}"
+>>>>>>> cc6b8a88d396801da738eba7f6c61e9bd82eb9e9
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,17 @@ Global
 		{ACB3EABA-D830-463B-84DC-6D8BC166EB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACB3EABA-D830-463B-84DC-6D8BC166EB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACB3EABA-D830-463B-84DC-6D8BC166EB36}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{B4484A3F-23E2-4D2B-AD53-BFF19790D5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B4484A3F-23E2-4D2B-AD53-BFF19790D5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4484A3F-23E2-4D2B-AD53-BFF19790D5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4484A3F-23E2-4D2B-AD53-BFF19790D5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{B69E02AF-B7BB-4659-9E17-D65587B820EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69E02AF-B7BB-4659-9E17-D65587B820EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69E02AF-B7BB-4659-9E17-D65587B820EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69E02AF-B7BB-4659-9E17-D65587B820EC}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> cc6b8a88d396801da738eba7f6c61e9bd82eb9e9
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

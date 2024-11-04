@@ -2,7 +2,7 @@
 using ThucHanhWebMVC.Models;
 namespace ThucHanhWebMVC.Controllers
 {
-    public class AccessController: Controller
+    public class AccessController : Controller
     {
         QlbanVaLiContext db = new QlbanVaLiContext();
         [HttpGet]
@@ -14,7 +14,7 @@ namespace ThucHanhWebMVC.Controllers
             }
             else
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
         }
         [HttpPost]
@@ -38,5 +38,44 @@ namespace ThucHanhWebMVC.Controllers
             HttpContext.Session.Remove("UserName");
             return RedirectToAction("Login", "Access");
         }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Access");
+            }
+        }
+        [HttpPost]
+        public IActionResult Register(TUser user)
+        {
+            // Kiểm tra xem tên người dùng đã tồn tại chưa
+            var existingUser = db.TUsers.FirstOrDefault(x => x.Username == user.Username);
+
+            if (existingUser != null)
+            {
+                TempData["Error"] = "Tên tài khoản đã được sử dụng";
+                return View("Register", user);
+            }
+
+            // Nếu chưa tồn tại, thêm tài khoản mới
+            db.TUsers.Add(new TUser
+            {
+                Username = user.Username,
+                Password = user.Password // Nên mã hóa mật khẩu trước khi lưu
+            });
+            db.SaveChanges();
+
+            // Chuyển hướng về trang Login sau khi đăng ký thành công
+           
+            return View("Login");
+
+        }
+
     }
 }

@@ -29,41 +29,42 @@
                             <div class="brand-logo">
                                 <img src="../../AdminLayout/assets/images/logo.svg">
                             </div>
-                            <h4>Hello! let's get started</h4>
-                            <h6 class="font-weight-light">Sign in to continue.</h6>
+                            <h4>New here?</h4>
+                            <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                             @* <form class="pt-3"> *@
-                                @using(Html.BeginForm("Login","Access",FormMethod.Post)){
+                            @using (Html.BeginForm("Register", "Access", FormMethod.Post))
+                            {
+                                <p>
+                                    @TempData["Error"]
+                                </p>
                                 <div class="form-group">
-                                    @Html.TextBoxFor(x => x.Username, new {@class="form-control form-control-lg", placeholder="Username", required="required",autofocus="autofocus"})
+                                    @Html.TextBoxFor(x=>x.Username, new { @class = "form-control form-control-lg", placeholder = "Username", required = "required", autofocus = "autofocus" })
                                     @*  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username"> *@
                                 </div>
                                 <div class="form-group">
-                                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control form-control-lg",Type="Password", placeholder = "Password"})
+                                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control form-control-lg", Type = "Password", placeholder = "Password" })
 
                                     @*   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> *@
                                 </div>
                                 <div class="mt-3">
-                                    <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn " type="submit">Sign in</button>
-                                    @* <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a> *@
+                                    <!-- Nút đăng ký -->
+                                    <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" type="submit">Sign Up</button>
                                 </div>
-                                <div class="my-2 d-flex justify-content-between align-items-center">
-                                    <div class="form-check">
-                                        <label class="form-check-label text-muted">
-                                            <input type="checkbox" class="form-check-input"> Keep me signed in
-                                        </label>
-                                    </div>
-                                    <a href="#" class="auth-link text-black">Forgot password?</a>
-                                </div>
-                                @* <div class="mb-2">
-                                    <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                                        <i class="mdi mdi-facebook me-2"></i>Connect using facebook
-                                    </button>
-                                </div> *@
                                 <div class="text-center mt-4 font-weight-light">
-                                    Don't have an account? <a asp-controller="Access" asp-action="Register" class="text-primary">Create</a>
-                                    @* <button class="text-primary" type="register">Create</button> *@
+                                    Already have an account? <a asp-controller="Access" asp-action="Login" class="text-primary">Login</a>
                                 </div>
-                                }@* </form> *@
+                            }
+                            @* </form> *@
+                            @* <div class="form-group">
+                                <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                                    <option>Country</option>
+                                    <option>United States of America</option>
+                                    <option>United Kingdom</option>
+                                    <option>India</option>
+                                    <option>Germany</option>
+                                    <option>Argentina</option>
+                                </select>
+                            </div> *@
                         </div>
                     </div>
                 </div>
@@ -84,4 +85,11 @@
     <script src="../../AdminLayout/assets/js/misc.js"></script>
     <!-- endinject -->
 </body>
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
 </html>

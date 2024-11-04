@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using ThucHanhWebMVC.Models;
+using ThucHanhWebMVC.Models.Authentication;
 using X.PagedList;
 
 namespace ThucHanhWebMVC.Controllers
@@ -16,7 +17,7 @@ namespace ThucHanhWebMVC.Controllers
         {
             _logger = logger;
         }
-
+        [Authentication]
         public IActionResult Index(int? page)
         {
             //List<TDanhMucSp> listSP = db.TDanhMucSps.ToList(); // them vao
